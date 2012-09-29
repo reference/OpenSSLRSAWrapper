@@ -1,6 +1,6 @@
 // OpenSSLRSAWrapper.h
 //
-// Copyright (c) 2012 scott ban
+// Copyright (c) 2012 scott ban (http://github.com/reference)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,6 @@
 #import <Foundation/Foundation.h>
 #include <openssl/rsa.h>
 #include <openssl/pem.h>
-#include <openssl/err.h>
 
 typedef enum {
     KeyTypePublic,
