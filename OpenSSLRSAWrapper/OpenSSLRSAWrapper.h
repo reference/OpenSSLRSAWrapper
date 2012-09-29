@@ -1,6 +1,6 @@
 // OpenSSLRSAWrapper.h
 //
-// Copyright (c) 2012 scott ban (http://github.com/reference)
+// Copyright (c) 2012 scott ban
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@
 #import <Foundation/Foundation.h>
 #include <openssl/rsa.h>
 #include <openssl/pem.h>
+#include <openssl/err.h>
 
 typedef enum {
     KeyTypePublic,
@@ -40,6 +41,9 @@ typedef enum {
 }
 
 /**
+ Thanks to Berin with this property at link:
+ http://blog.wingsofhermes.org/?p=42
+ 
  @property publicKeyBase64
  @discussion This property is presented by the local file.And `exportRSAKeys` should be called before get this.
  @return public key base64 encoded string.
@@ -64,7 +68,7 @@ typedef enum {
  Generate rsa key pair by the key size.
  
  @param keySize RSA key bits . The value could be `512`,`1024`,`2048` and so on.
-        Normal is `1024`.
+ Normal is `1024`.
  */
 - (BOOL)generateRSAKeyPairWithKeySize:(NSInteger)keySize;
 
@@ -77,11 +81,11 @@ typedef enum {
 - (BOOL)exportRSAKeys;
 
 /**
- Import rsa key pairs from local file with the type.
+ Import rsa key pairs from local file with type.
  
  @param type `KeyTypePublic` or `KeyTypePrivate` is present.
  @discussion If the method `generateRSAKeyPairWithKeySize:` wasn't called before and also the method `exportRSAKeys`,
-        This method will never success.
+ This method will never success.
  @return Success or not.
  */
 - (BOOL)importRSAKeyWithType:(KeyType)type;

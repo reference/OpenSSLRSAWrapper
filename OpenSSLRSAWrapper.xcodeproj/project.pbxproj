@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C729A9916173BAC00AD70C6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C729A9616173BAC00AD70C6 /* NSData+Base64.m */; };
+		8C729A9A16173BAC00AD70C6 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C729A9816173BAC00AD70C6 /* NSString+Base64.m */; };
 		8CADA32E1616A4530037D398 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8CADA32D1616A4530037D398 /* README.md */; };
 		8CADA3E31616AF340037D398 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8CADA3961616AF340037D398 /* LICENSE */; };
 		8CADA3F01616DD740037D398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADA3EE1616DD740037D398 /* ViewController.m */; };
@@ -27,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C729A9516173BAC00AD70C6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		8C729A9616173BAC00AD70C6 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		8C729A9716173BAC00AD70C6 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		8C729A9816173BAC00AD70C6 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		8CADA32D1616A4530037D398 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = OpenSSLRSAWrapper/README.md; sourceTree = "<group>"; };
 		8CADA3961616AF340037D398 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8CADA3981616AF340037D398 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
@@ -143,6 +149,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C729A9316173B9000AD70C6 /* base64 */ = {
+			isa = PBXGroup;
+			children = (
+				8C729A9516173BAC00AD70C6 /* NSData+Base64.h */,
+				8C729A9616173BAC00AD70C6 /* NSData+Base64.m */,
+				8C729A9716173BAC00AD70C6 /* NSString+Base64.h */,
+				8C729A9816173BAC00AD70C6 /* NSString+Base64.m */,
+			);
+			name = base64;
+			sourceTree = "<group>";
+		};
 		8CADA3951616AF340037D398 /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +291,7 @@
 		8CEF56A5161607690001C28B /* OpenSSLRSAWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				8C729A9316173B9000AD70C6 /* base64 */,
 				8CEF56C3161607A50001C28B /* openssl-iibs */,
 				8CADA3F21616DD880037D398 /* OpenSSLRSAWrapper */,
 				8CADA3ED1616DD740037D398 /* ViewController.h */,
@@ -384,6 +402,8 @@
 				8CEF56B0161607690001C28B /* AppDelegate.m in Sources */,
 				8CEF56BE161607920001C28B /* OpenSSLRSAWrapper.m in Sources */,
 				8CADA3F01616DD740037D398 /* ViewController.m in Sources */,
+				8C729A9916173BAC00AD70C6 /* NSData+Base64.m in Sources */,
+				8C729A9A16173BAC00AD70C6 /* NSString+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
