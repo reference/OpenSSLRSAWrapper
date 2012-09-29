@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CADA32E1616A4530037D398 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8CADA32D1616A4530037D398 /* README.md */; };
 		8CEF56A0161607690001C28B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF569F161607690001C28B /* UIKit.framework */; };
 		8CEF56A2161607690001C28B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF56A1161607690001C28B /* Foundation.framework */; };
 		8CEF56A4161607690001C28B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF56A3161607690001C28B /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8CADA32D1616A4530037D398 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = OpenSSLRSAWrapper/README.md; sourceTree = "<group>"; };
 		8CEF569B161607690001C28B /* OpenSSLRSAWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSSLRSAWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEF569F161607690001C28B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8CEF56A1161607690001C28B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +62,7 @@
 		8CEF5690161607690001C28B = {
 			isa = PBXGroup;
 			children = (
+				8CADA32D1616A4530037D398 /* README.md */,
 				8CEF56A5161607690001C28B /* OpenSSLRSAWrapper */,
 				8CEF569E161607690001C28B /* Frameworks */,
 				8CEF569C161607690001C28B /* Products */,
@@ -175,6 +178,7 @@
 				8CEF56B2161607690001C28B /* Default.png in Resources */,
 				8CEF56B4161607690001C28B /* Default@2x.png in Resources */,
 				8CEF56B6161607690001C28B /* Default-568h@2x.png in Resources */,
+				8CADA32E1616A4530037D398 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +321,7 @@
 				8CEF56BB161607690001C28B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
