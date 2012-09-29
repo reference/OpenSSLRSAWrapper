@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "OpenSSLRSAWrapper.h"
 
 @implementation AppDelegate
 
@@ -14,6 +15,22 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    //test
+    OpenSSLRSAWrapper *wrapper = [OpenSSLRSAWrapper shareInstance];
+    if([wrapper generateRSAKeyPairWithKeySize:1024]){
+        [wrapper exportRSAKeys];
+        
+        NSLog(@"public key:\n%@\n",wrapper.publicKeyBase64);
+        NSLog(@"private key:\n%@\n",wrapper.privateKeyBase64);
+        
+        NSString *plainText = @"~1!@#$%^&*()_-+=\|,.?/";
+        NSData *encryptData = [wrapper encryptRSAKeyWithType:KeyTypePrivate plainText:plainText];
+        
+        NSString *decryptString = [wrapper decryptRSAKeyWithType:KeyTypePublic data:encryptData];
+        NSLog(@"plain text : >>>>%@<<<<",decryptString);
+    }
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
