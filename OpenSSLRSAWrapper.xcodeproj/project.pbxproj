@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CEF56A0161607690001C28B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF569F161607690001C28B /* UIKit.framework */; };
+		8CEF56A2161607690001C28B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF56A1161607690001C28B /* Foundation.framework */; };
+		8CEF56A4161607690001C28B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF56A3161607690001C28B /* CoreGraphics.framework */; };
+		8CEF56AA161607690001C28B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF56A8161607690001C28B /* InfoPlist.strings */; };
+		8CEF56AC161607690001C28B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF56AB161607690001C28B /* main.m */; };
+		8CEF56B0161607690001C28B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF56AF161607690001C28B /* AppDelegate.m */; };
+		8CEF56B2161607690001C28B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF56B1161607690001C28B /* Default.png */; };
+		8CEF56B4161607690001C28B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF56B3161607690001C28B /* Default@2x.png */; };
+		8CEF56B6161607690001C28B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF56B5161607690001C28B /* Default-568h@2x.png */; };
+		8CEF56BE161607920001C28B /* OpenSSLRSAWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF56BD161607920001C28B /* OpenSSLRSAWrapper.m */; };
+		8CEF56C1161607A00001C28B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF56BF161607A00001C28B /* libcrypto.a */; };
+		8CEF56C2161607A00001C28B /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF56C0161607A00001C28B /* libssl.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8CEF569B161607690001C28B /* OpenSSLRSAWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSSLRSAWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEF569F161607690001C28B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8CEF56A1161607690001C28B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CEF56A3161607690001C28B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8CEF56A7161607690001C28B /* OpenSSLRSAWrapper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenSSLRSAWrapper-Info.plist"; sourceTree = "<group>"; };
+		8CEF56A9161607690001C28B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CEF56AB161607690001C28B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CEF56AD161607690001C28B /* OpenSSLRSAWrapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenSSLRSAWrapper-Prefix.pch"; sourceTree = "<group>"; };
+		8CEF56AE161607690001C28B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8CEF56AF161607690001C28B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8CEF56B1161607690001C28B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8CEF56B3161607690001C28B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8CEF56B5161607690001C28B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8CEF56BC161607920001C28B /* OpenSSLRSAWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSSLRSAWrapper.h; sourceTree = "<group>"; };
+		8CEF56BD161607920001C28B /* OpenSSLRSAWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSSLRSAWrapper.m; sourceTree = "<group>"; };
+		8CEF56BF161607A00001C28B /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		8CEF56C0161607A00001C28B /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CEF5698161607690001C28B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF56A0161607690001C28B /* UIKit.framework in Frameworks */,
+				8CEF56A2161607690001C28B /* Foundation.framework in Frameworks */,
+				8CEF56A4161607690001C28B /* CoreGraphics.framework in Frameworks */,
+				8CEF56C1161607A00001C28B /* libcrypto.a in Frameworks */,
+				8CEF56C2161607A00001C28B /* libssl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CEF5690161607690001C28B = {
+			isa = PBXGroup;
+			children = (
+				8CEF56A5161607690001C28B /* OpenSSLRSAWrapper */,
+				8CEF569E161607690001C28B /* Frameworks */,
+				8CEF569C161607690001C28B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CEF569C161607690001C28B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF569B161607690001C28B /* OpenSSLRSAWrapper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CEF569E161607690001C28B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF569F161607690001C28B /* UIKit.framework */,
+				8CEF56A1161607690001C28B /* Foundation.framework */,
+				8CEF56A3161607690001C28B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CEF56A5161607690001C28B /* OpenSSLRSAWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF56C3161607A50001C28B /* openssl-iibs */,
+				8CEF56BC161607920001C28B /* OpenSSLRSAWrapper.h */,
+				8CEF56BD161607920001C28B /* OpenSSLRSAWrapper.m */,
+				8CEF56AE161607690001C28B /* AppDelegate.h */,
+				8CEF56AF161607690001C28B /* AppDelegate.m */,
+				8CEF56A6161607690001C28B /* Supporting Files */,
+			);
+			path = OpenSSLRSAWrapper;
+			sourceTree = "<group>";
+		};
+		8CEF56A6161607690001C28B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF56A7161607690001C28B /* OpenSSLRSAWrapper-Info.plist */,
+				8CEF56A8161607690001C28B /* InfoPlist.strings */,
+				8CEF56AB161607690001C28B /* main.m */,
+				8CEF56AD161607690001C28B /* OpenSSLRSAWrapper-Prefix.pch */,
+				8CEF56B1161607690001C28B /* Default.png */,
+				8CEF56B3161607690001C28B /* Default@2x.png */,
+				8CEF56B5161607690001C28B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CEF56C3161607A50001C28B /* openssl-iibs */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF56BF161607A00001C28B /* libcrypto.a */,
+				8CEF56C0161607A00001C28B /* libssl.a */,
+			);
+			name = "openssl-iibs";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CEF569A161607690001C28B /* OpenSSLRSAWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CEF56B9161607690001C28B /* Build configuration list for PBXNativeTarget "OpenSSLRSAWrapper" */;
+			buildPhases = (
+				8CEF5697161607690001C28B /* Sources */,
+				8CEF5698161607690001C28B /* Frameworks */,
+				8CEF5699161607690001C28B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenSSLRSAWrapper;
+			productName = OpenSSLRSAWrapper;
+			productReference = 8CEF569B161607690001C28B /* OpenSSLRSAWrapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CEF5692161607690001C28B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "sban@netspectrum.com";
+			};
+			buildConfigurationList = 8CEF5695161607690001C28B /* Build configuration list for PBXProject "OpenSSLRSAWrapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8CEF5690161607690001C28B;
+			productRefGroup = 8CEF569C161607690001C28B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CEF569A161607690001C28B /* OpenSSLRSAWrapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CEF5699161607690001C28B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF56AA161607690001C28B /* InfoPlist.strings in Resources */,
+				8CEF56B2161607690001C28B /* Default.png in Resources */,
+				8CEF56B4161607690001C28B /* Default@2x.png in Resources */,
+				8CEF56B6161607690001C28B /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CEF5697161607690001C28B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF56AC161607690001C28B /* main.m in Sources */,
+				8CEF56B0161607690001C28B /* AppDelegate.m in Sources */,
+				8CEF56BE161607920001C28B /* OpenSSLRSAWrapper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8CEF56A8161607690001C28B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CEF56A9161607690001C28B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CEF56B7161607690001C28B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CEF56B8161607690001C28B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CEF56BA161607690001C28B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSSLRSAWrapper/OpenSSLRSAWrapper-Prefix.pch";
+				HEADER_SEARCH_PATHS = "include/**";
+				INFOPLIST_FILE = "OpenSSLRSAWrapper/OpenSSLRSAWrapper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OpenSSLRSAWrapper\"",
+					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8CEF56BB161607690001C28B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSSLRSAWrapper/OpenSSLRSAWrapper-Prefix.pch";
+				HEADER_SEARCH_PATHS = "include/**";
+				INFOPLIST_FILE = "OpenSSLRSAWrapper/OpenSSLRSAWrapper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OpenSSLRSAWrapper\"",
+					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CEF5695161607690001C28B /* Build configuration list for PBXProject "OpenSSLRSAWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF56B7161607690001C28B /* Debug */,
+				8CEF56B8161607690001C28B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CEF56B9161607690001C28B /* Build configuration list for PBXNativeTarget "OpenSSLRSAWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF56BA161607690001C28B /* Debug */,
+				8CEF56BB161607690001C28B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CEF5692161607690001C28B /* Project object */;
+}
