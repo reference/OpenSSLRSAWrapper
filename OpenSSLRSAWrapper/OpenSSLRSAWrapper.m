@@ -286,11 +286,11 @@
              NSLog(@"-------------Private Decrypt end------------");
              */
             NSMutableString *decryptString = [[NSMutableString alloc] initWithBytes:decData
-                                                                             length:status
+                                                                             length:strlen(decData)
                                                                            encoding:NSASCIIStringEncoding];
             /*
              NSLog(@"----->>>>%@<<<<",decryptString);
-             NSLog(@"private decrypt data length is %zi",strlen((const char *)decData));
+             NSLog(@"private decrypt data length is %zi",strlen(decData));
              */
             free(decData);
             decData = NULL;

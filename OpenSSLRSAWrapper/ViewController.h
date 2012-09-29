@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ViewController.h
 //  OpenSSLRSAWrapper
 //
 //  Created by sban@netspectrum.com on 9/29/12.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface ViewController : UIViewController
 
 @end
