@@ -74,12 +74,10 @@ size_t encodeLength(unsigned char * buf, size_t length) {
     int bitstringEncLength;
     
     // When we get to the bitstring - how will we encode it?
-    if ([publicKeyBits_ length] + 1 > 128 && [publicKeyBits_ length] + 1 < 256)
-        bitstringEncLength = 2;
-    else if ([publicKeyBits_ length] +1 >= 256)
-        bitstringEncLength = 3;
-    else
+    if ([publicKeyBits_ length] + 1 < 128)
         bitstringEncLength = 1;
+    else
+        bitstringEncLength = (([publicKeyBits_ length] +1) / 256) + 2;
     
     // Overall we have a sequence of a certain length
     builder[0] = 0x30;    // ASN.1 encoding representing a SEQUENCE
