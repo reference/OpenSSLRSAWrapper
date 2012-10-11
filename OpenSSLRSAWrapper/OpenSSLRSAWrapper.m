@@ -268,16 +268,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
             return nil;
         }
         
-        //It seems [publicKey cStringUsingEncoding:NSASCIIStringEncoding] doesn't work for the RSA_private_encrypt/RSA_public_encrypt methods of the parameter `from`.I've tried many times but failed.
-        int length = [text length];
-        unsigned char input[length+1];
-        bzero(input, length+1);
-        
-        int i=0;
-        for (; i<length; i++) {
-            input[i] = [text characterAtIndex:i];
-        }
-        input[i] = '\0';//end of the string
+        const char *input = [text cStringUsingEncoding:NSASCIIStringEncoding];
         
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:RSA_PADDING_TYPE_NONE keyType:keyType];
         
