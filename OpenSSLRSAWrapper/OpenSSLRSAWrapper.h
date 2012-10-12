@@ -26,7 +26,6 @@
 #include <openssl/pem.h>
 
 typedef enum {
-    KeyTypeNone,
     KeyTypePublic,
     KeyTypePrivate
 }KeyType;

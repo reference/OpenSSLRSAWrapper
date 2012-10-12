@@ -317,9 +317,6 @@ size_t encodeLength(unsigned char * buf, size_t length) {
         
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:padding];
         
-        unsigned char encData[flen];
-        bzero(encData, flen);
-        
         switch (keyType) {
             case KeyTypePrivate:{
                 //start encrypt
@@ -348,9 +345,6 @@ size_t encodeLength(unsigned char * buf, size_t length) {
         }
         
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:padding];
-        
-        unsigned char encData[flen];
-        bzero(encData, flen);
         
         switch (keyType) {
             case KeyTypePrivate:{
