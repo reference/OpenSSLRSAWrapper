@@ -60,12 +60,12 @@
 //        NSLog(@"public key:\n%@\n",wrapper.publicKeyBase64);
 //        NSLog(@"private key:\n%@\n",wrapper.privateKeyBase64);
         
-        NSString *plainText = @"OpenSSLRSAWrapper is simple and useful.";
+        NSString *plainText = @"OpenSSLRSAWrapper+is+simple+and+useful.";
         
         [string appendFormat:@"Start encrypt plain text...\nContent :%@\n",plainText];
         self.tv.text = string;
         
-        NSData *encryptData = [wrapper encryptRSAKeyWithType:KeyTypePrivate plainText:plainText];
+        NSData *encryptData = [wrapper encryptRSAKeyWithType:KeyTypePrivate paddingType:RSA_PADDING_TYPE_NONE plainText:plainText usingEncoding:NSASCIIStringEncoding];
         
         
         [string appendString:@"Done!\n"];
@@ -75,7 +75,7 @@
         [string appendString:@"Start decrypt...\n"];
         self.tv.text = string;
         
-        NSString *decryptString = [wrapper decryptRSAKeyWithType:KeyTypePublic data:encryptData];
+        NSString *decryptString = [wrapper decryptRSAKeyWithType:KeyTypePublic paddingType:RSA_PADDING_TYPE_NONE plainTextData:encryptData usingEncoding:NSASCIIStringEncoding];
         
         [string appendString:@"Done!\n"];
         self.tv.text = string;
@@ -83,7 +83,7 @@
         [string appendFormat:@"The decrypted plain text is %@\n",decryptString];
         self.tv.text = string;
         
-        NSLog(@"plain text : >>>>%@<<<<\n",decryptString);
+        NSLog(@"plain text :%@",decryptString);
     }
 
 }

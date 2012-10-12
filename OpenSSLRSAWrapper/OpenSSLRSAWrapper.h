@@ -1,6 +1,7 @@
 // OpenSSLRSAWrapper.h
+// Version 2.0
 //
-// Copyright (c) 2012 scott ban (http://github.com/reference)
+// Copyright (c) 2012 scott ban ( http://github.com/reference )
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +26,7 @@
 #include <openssl/pem.h>
 
 typedef enum {
+    KeyTypeNone,
     KeyTypePublic,
     KeyTypePrivate
 }KeyType;
@@ -96,7 +98,16 @@ typedef enum {
  @param text  The string that will be encrypted.
  @return The enrypted data.
  */
-- (NSData*)encryptRSAKeyWithType:(KeyType)keyType plainText:(NSString*)text;
+- (NSData*)encryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding plainText:(NSString*)text usingEncoding:(NSStringEncoding)encoding;
+
+/**
+ RSA encrypt the data with private or public key.
+ 
+ @param keyType `KeyTypePublic` or `KeyTypePrivate` is present.
+ @param data  The data that will be encrypted.
+ @return The enrypted data.
+ */
+- (NSData*)encryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding data:(NSData*)data;
 
 /**
  RSA decrypt the data that encrypted.
@@ -105,6 +116,67 @@ typedef enum {
  @param data  The data that encrypted.
  @return The plain text.
  */
-- (NSString*)decryptRSAKeyWithType:(KeyType)keyType data:(NSData*)data;
+- (NSString*)decryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding plainTextData:(NSData*)data usingEncoding:(NSStringEncoding)encoding;
+
+/**
+ RSA decrypt the data that encrypted.
+ 
+ @param keyType `KeyTypePublic` or `KeyTypePrivate` is present.
+ @param data  The data that encrypted.
+ @return The data decrypted.
+ */
+- (NSData*)decryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding encryptedData:(NSData*)data;
+
+@end
+
+@interface OpenSSLRSAWrapper (Extra_Double_Encrypt_Decrypt)
+
+/**
+ RSA double encrypted
+ 
+ @param keyType `KeyTypePublic` or `KeyTypePrivate` is present.
+ @param data  The data will be encrypted.
+ @return NSData that encrypted.
+ @warning `data` shouldn't be nil.
+ */
+- (NSData*)doubleEncryptRSAKeyWithType:(KeyType)keyType :(RSA_PADDING_TYPE)padding :(NSData*)data;
+
+/**
+ RSA double decrypted
+ 
+ @param keyType `KeyTypePublic` or `KeyTypePrivate` is present.
+ @param data  The data will be decrypted.
+ @return NSData that decrypted.
+ @warning `encryptedData` shouldn't be nil.
+ */
+- (NSData*)doubleDecryptRSAKeyWithType:(KeyType)keyType :(RSA_PADDING_TYPE)padding :(NSData*)encryptedData;
+
+@end
+
+@interface OpenSSLRSAWrapper (C_Base)
+
+/**
+ RSA encrypt
+ 
+ @param from Input value.
+ @param to  Output value.
+ @return status of the encrypted.
+ error code:
+ -1 : `from` or `to` is NULL;rsa key is not presented.
+ Otherwise,the openssl's rsa encrypted status will be presented.
+ */
+- (int)encryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(unsigned char *)to :(RSA_PADDING_TYPE)padding ;
+
+/**
+ RSA decrypt
+ 
+ @param from Input value.
+ @param to  Output value.
+ @return status of the decrypted
+ error code:
+ -1 : `from` or `to` is NULL;rsa key is not presented.
+ Otherwise,the openssl's rsa decrypted status will be presented.
+ */
+- (int)decryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(unsigned char *)to :(RSA_PADDING_TYPE)padding ;
 
 @end

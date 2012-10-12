@@ -8,7 +8,7 @@ Introduction
 
 Version
 =================
-1.0
+2.0
 
 OpenSSL stuff
 =================
