@@ -246,7 +246,9 @@ size_t encodeLength(unsigned char * buf, size_t length) {
 - (NSData*)encryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding data:(NSData*)d{
     if (d && [d length]) {
         
-        unsigned char *from = (unsigned char *)[d bytes];
+        unsigned char from[128];
+        bzero(from, sizeof(from));
+        memcpy(from, [d bytes], [d length]);
         
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:padding];
         unsigned char to[flen];
@@ -278,7 +280,9 @@ size_t encodeLength(unsigned char * buf, size_t length) {
 - (NSData*)decryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding encryptedData:(NSData*)data{
     if (data && [data length]) {
         
-        unsigned char *from = (unsigned char *)[data bytes];
+        unsigned char from[128];
+        bzero(from, sizeof(from));
+        memcpy(from, [data bytes], [data length]);
         
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:padding];
         unsigned char to[flen];
@@ -371,7 +375,9 @@ size_t encodeLength(unsigned char * buf, size_t length) {
     if (data && [data length]) {
         NSData *d = data;
         
-        unsigned char *from = (unsigned char *)[d bytes];
+        unsigned char from[128];
+        bzero(from, sizeof(from));
+        memcpy(from, [d bytes], [d length]);
         
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:padding];
         
@@ -392,7 +398,9 @@ size_t encodeLength(unsigned char * buf, size_t length) {
     if (encryptedData && [encryptedData length]) {
         NSData *d = encryptedData;
         
-        unsigned char *from = (unsigned char *)[d bytes];
+        unsigned char from[128];
+        bzero(from, sizeof(from));
+        memcpy(from, [d bytes], [d length]);
         
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:padding];
         
