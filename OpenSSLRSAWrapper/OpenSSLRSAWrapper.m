@@ -254,9 +254,6 @@ size_t encodeLength(unsigned char * buf, size_t length) {
         unsigned char to[flen];
         bzero(to, flen);
         
-        unsigned char too[flen];
-        bzero(too, flen);
-        
         [self encryptRSAKeyWithType:keyType :from :to :padding];
         
         return [NSData dataWithBytes:to length:sizeof(to)];
@@ -287,9 +284,6 @@ size_t encodeLength(unsigned char * buf, size_t length) {
         NSInteger flen = [self getBlockSizeWithRSA_PADDING_TYPE:padding];
         unsigned char to[flen];
         bzero(to, flen);
-        
-        unsigned char too[flen];
-        bzero(too, flen);
         
         [self decryptRSAKeyWithType:keyType :from :to :padding];
         
