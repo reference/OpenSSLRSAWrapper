@@ -65,7 +65,7 @@
         [string appendFormat:@"Start encrypt plain text...\nContent :%@\n",plainText];
         self.tv.text = string;
         
-        NSData *encryptData = [wrapper encryptRSAKeyWithType:KeyTypePrivate paddingType:RSA_PADDING_TYPE_NONE plainText:plainText usingEncoding:NSASCIIStringEncoding];
+        NSData *encryptData = [wrapper encryptRSAKeyWithType:KeyTypePrivate paddingType:RSA_PADDING_TYPE_PKCS1 plainText:plainText usingEncoding:NSASCIIStringEncoding];
         
         
         [string appendString:@"Done!\n"];
@@ -75,7 +75,7 @@
         [string appendString:@"Start decrypt...\n"];
         self.tv.text = string;
         
-        NSString *decryptString = [wrapper decryptRSAKeyWithType:KeyTypePublic paddingType:RSA_PADDING_TYPE_NONE plainTextData:encryptData usingEncoding:NSASCIIStringEncoding];
+        NSString *decryptString = [wrapper decryptRSAKeyWithType:KeyTypePublic paddingType:RSA_PADDING_TYPE_PKCS1 plainTextData:encryptData usingEncoding:NSASCIIStringEncoding];
         
         [string appendString:@"Done!\n"];
         self.tv.text = string;

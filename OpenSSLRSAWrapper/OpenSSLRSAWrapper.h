@@ -1,5 +1,5 @@
 // OpenSSLRSAWrapper.h
-// Version 2.0
+// Version 3.0
 //
 // Copyright (c) 2012 scott ban ( http://github.com/reference )
 //
@@ -65,6 +65,13 @@ typedef enum {
 + (id)shareInstance;
 
 /**
+ This method will check local filesystem whether the `publicKey.pem` or `publicKey.pem` exist.
+ 
+ *@return can import or not.
+ */
++ (BOOL)canImportRSAKeys;
+
+/**
  Generate rsa key pair by the key size.
  
  @param keySize RSA key bits . The value could be `512`,`1024`,`2048` and so on.
@@ -128,54 +135,32 @@ typedef enum {
 
 @end
 
-@interface OpenSSLRSAWrapper (Extra_Double_Encrypt_Decrypt)
-
-/**
- RSA double encrypted
- 
- @param keyType `KeyTypePublic` or `KeyTypePrivate` is present.
- @param data  The data will be encrypted.
- @return NSData that encrypted.
- @warning `data` shouldn't be nil.
- */
-- (NSData*)doubleEncryptRSAKeyWithType:(KeyType)keyType :(RSA_PADDING_TYPE)padding :(NSData*)data;
-
-/**
- RSA double decrypted
- 
- @param keyType `KeyTypePublic` or `KeyTypePrivate` is present.
- @param data  The data will be decrypted.
- @return NSData that decrypted.
- @warning `encryptedData` shouldn't be nil.
- */
-- (NSData*)doubleDecryptRSAKeyWithType:(KeyType)keyType :(RSA_PADDING_TYPE)padding :(NSData*)encryptedData;
-
-@end
-
 @interface OpenSSLRSAWrapper (C_Base)
 
 /**
  RSA encrypt
  
  @param from Input value.
+ @param flen Input data length.
  @param to  Output value.
  @return status of the encrypted.
  error code:
  -1 : `from` or `to` is NULL;rsa key is not presented.
  Otherwise,the openssl's rsa encrypted status will be presented.
  */
-- (int)encryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(unsigned char *)to :(RSA_PADDING_TYPE)padding ;
+- (int)encryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(int)flen :(unsigned char *)to :(RSA_PADDING_TYPE)padding;
 
 /**
  RSA decrypt
  
  @param from Input value.
+ @param flen Input data length.
  @param to  Output value.
  @return status of the decrypted
  error code:
  -1 : `from` or `to` is NULL;rsa key is not presented.
  Otherwise,the openssl's rsa decrypted status will be presented.
  */
-- (int)decryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(unsigned char *)to :(RSA_PADDING_TYPE)padding ;
+- (int)decryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(int)flen :(unsigned char *)to :(RSA_PADDING_TYPE)padding ;
 
 @end
