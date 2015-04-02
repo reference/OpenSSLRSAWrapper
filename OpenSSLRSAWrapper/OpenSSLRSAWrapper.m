@@ -78,7 +78,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
     if ([publicKeyBits_ length] + 1 < 128)
         bitstringEncLength = 1;
     else
-        bitstringEncLength = (([publicKeyBits_ length] +1) / 256) + 2;
+        bitstringEncLength = (((int)[publicKeyBits_ length] +1) / 256) + 2;
     
     // Overall we have a sequence of a certain length
     builder[0] = 0x30;    // ASN.1 encoding representing a SEQUENCE
@@ -179,7 +179,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
     return [fm fileExistsAtPath:OpenSSLRSAPublicKeyFile] && [fm fileExistsAtPath:OpenSSLRSAPrivateKeyFile];
 }
 
-- (BOOL)generateRSAKeyPairWithKeySize:(NSInteger)keySize {
+- (BOOL)generateRSAKeyPairWithKeySize:(int)keySize {
     if (NULL != _rsa) {
         RSA_free(_rsa);
         _rsa = NULL;
@@ -250,7 +250,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
 
 - (NSData*)encryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding data:(NSData*)d{
     if (d && [d length]) {
-        int flen = [d length];
+        int flen = (int)[d length];
         unsigned char from[flen];
         bzero(from, sizeof(from));
         memcpy(from, [d bytes], [d length]);
@@ -258,7 +258,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
         unsigned char to[128];
         bzero(to, sizeof(to));
         
-        [self encryptRSAKeyWithType:keyType :from :flen :to :padding];
+        [self encryptRSAKeyWithType:keyType from:from flen:flen to:to padding:padding];
         
         return [NSData dataWithBytes:to length:sizeof(to)];
     }
@@ -281,7 +281,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
 - (NSData*)decryptRSAKeyWithType:(KeyType)keyType paddingType:(RSA_PADDING_TYPE)padding encryptedData:(NSData*)data{
     if (data && [data length]) {
         
-        int flen = [data length];
+        int flen = (int)[data length];
         unsigned char from[flen];
         bzero(from, sizeof(from));
         memcpy(from, [data bytes], [data length]);
@@ -289,7 +289,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
         unsigned char to[128];
         bzero(to, sizeof(to));
         
-        [self decryptRSAKeyWithType:keyType :from :flen :to :padding];
+        [self decryptRSAKeyWithType:keyType from:from flen:flen to:to padding:padding];
         
         return [NSData dataWithBytes:to length:sizeof(to)];
     }
@@ -309,7 +309,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
 
 #pragma mark - Base
 
-- (int)encryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(int)flen :(unsigned char *)to :(RSA_PADDING_TYPE)padding{
+- (int)encryptRSAKeyWithType:(KeyType)keyType from:(const unsigned char *)from flen:(int)flen to:(unsigned char *)to padding:(RSA_PADDING_TYPE)padding{
     if (from != NULL && to != NULL) {
         int status = RSA_check_key(_rsa);
         if (!status) {
@@ -335,7 +335,7 @@ size_t encodeLength(unsigned char * buf, size_t length) {
     }return -1;
 }
 
-- (int)decryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(int)flen :(unsigned char *)to :(RSA_PADDING_TYPE)padding{
+- (int)decryptRSAKeyWithType:(KeyType)keyType from:(const unsigned char *)from flen:(int)flen to:(unsigned char *)to padding:(RSA_PADDING_TYPE)padding{
     if (from != NULL && to != NULL) {
         int status = RSA_check_key(_rsa);
         if (!status) {
