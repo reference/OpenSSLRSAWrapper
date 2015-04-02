@@ -77,7 +77,7 @@ typedef enum {
  @param keySize RSA key bits . The value could be `512`,`1024`,`2048` and so on.
  Normal is `1024`.
  */
-- (BOOL)generateRSAKeyPairWithKeySize:(NSInteger)keySize;
+- (BOOL)generateRSAKeyPairWithKeySize:(int)keySize;
 
 /**
  Export the public key and the private key to local file.So that we can import the keys.
@@ -148,7 +148,7 @@ typedef enum {
  -1 : `from` or `to` is NULL;rsa key is not presented.
  Otherwise,the openssl's rsa encrypted status will be presented.
  */
-- (int)encryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(int)flen :(unsigned char *)to :(RSA_PADDING_TYPE)padding;
+- (int)encryptRSAKeyWithType:(KeyType)keyType from:(const unsigned char *)from flen:(int)flen to:(unsigned char *)to padding:(RSA_PADDING_TYPE)padding;
 
 /**
  RSA decrypt
@@ -161,6 +161,6 @@ typedef enum {
  -1 : `from` or `to` is NULL;rsa key is not presented.
  Otherwise,the openssl's rsa decrypted status will be presented.
  */
-- (int)decryptRSAKeyWithType:(KeyType)keyType :(const unsigned char *)from :(int)flen :(unsigned char *)to :(RSA_PADDING_TYPE)padding ;
+- (int)decryptRSAKeyWithType:(KeyType)keyType from:(const unsigned char *)from flen:(int)flen to:(unsigned char *)to padding:(RSA_PADDING_TYPE)padding ;
 
 @end
